@@ -1162,7 +1162,7 @@ uint32_t FAudioVoice_SetOutputVoices(
 			}
 			else
 			{
-				voice->sendMix[i] = FAudio_INTERNAL_Mix_Generic_Scalar;
+				voice->sendMix[i] = FAudio_INTERNAL_Mix_Generic;
 			}
 		}
 		else if (voice->outputChannels == 2)
@@ -1185,12 +1185,12 @@ uint32_t FAudioVoice_SetOutputVoices(
 			}
 			else
 			{
-				voice->sendMix[i] = FAudio_INTERNAL_Mix_Generic_Scalar;
+				voice->sendMix[i] = FAudio_INTERNAL_Mix_Generic;
 			}
 		}
 		else
 		{
-			voice->sendMix[i] = FAudio_INTERNAL_Mix_Generic_Scalar;
+			voice->sendMix[i] = FAudio_INTERNAL_Mix_Generic;
 		}
 
 		if (pSendList->pSends[i].Flags & FAUDIO_SEND_USEFILTER)
