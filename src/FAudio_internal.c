@@ -1008,11 +1008,9 @@ sendwork:
 			mixed,
 			voice->outputChannels,
 			oChan,
-			voice->volume,
 			finalSamples,
 			stream,
-			voice->channelVolume,
-			voice->sendCoefficients[i]
+			voice->mixCoefficients[i]
 		);
 
 		if (voice->sends.pSends[i].Flags & FAUDIO_SEND_USEFILTER)
@@ -1138,11 +1136,9 @@ static void FAudio_INTERNAL_MixSubmix(FAudioSubmixVoice *voice)
 			resampled,
 			voice->outputChannels,
 			oChan,
-			1.0f,
 			finalSamples,
 			stream,
-			voice->channelVolume,
-			voice->sendCoefficients[i]
+			voice->mixCoefficients[i]
 		);
 
 		if (voice->sends.pSends[i].Flags & FAUDIO_SEND_USEFILTER)
